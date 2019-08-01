@@ -1,0 +1,13 @@
+# encoding: cp866
+
+dict = {'dog' => ['собака','пес'],'cat' => ['кіт','кішка'], 'girl' => ['дівчина','дівчинка']}
+
+loop do 
+	puts "Enter word"
+	word = gets.strip
+	if word == ''
+		break
+	end
+	puts dict[word]
+
+end
