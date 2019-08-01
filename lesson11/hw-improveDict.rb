@@ -8,5 +8,6 @@ loop do
 		break
 	end
 	puts"Всього переклад?в:  #{dict[word].length}"
+	puts "Переклади: "
 	puts dict[word]
 end
