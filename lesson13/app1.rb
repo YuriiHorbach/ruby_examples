@@ -1,7 +1,13 @@
 @hh = {}
 
-def add_person name, age
-	@hh[name] = age
+def add_person options
+	# if @hh[name]
+	# 	puts'Exists!'
+	# 	#return але смислу писати нема
+	# end
+
+	puts'Exists!' if @hh[options[:name]]
+	@hh[options[:name]] = options[:age]
 end
 
 def show_hash
@@ -24,6 +30,8 @@ loop do
 	puts "Enter age: "
 	age = gets.to_i
 
-	add_person name, age
+	options = {:name => name, :age => age}
+
+	add_person options
 
 end
