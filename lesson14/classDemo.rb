@@ -1,66 +1,38 @@
 class Book
 
-	def initialize
-		@hh = {}
-	end
-				def add_person options
-						# if @hh[name]
-						# 	puts'Exists!'
-						# 	#return але смислу писати нема
-						# end
+			attr_reader :lastPersone #атрибут, який показує, що змінна :lastPersone доступна для читання
 
-						puts'Exists!' if @hh[options[:name]]
-						@hh[options[:name]] = options[:age]
-				end
+			def initialize
+					@hh = {}
+					@lastPersone =''
+			end
 
-				def show_hash
+			def addPersone options
+					puts 'Exists!' if @hh[options[:name]]
+					@lastPersone = options[:name]
+					@hh[options[:name]] = options[:age]
+			end
 
-						@hh.keys.each do |x|
-								puts "Name: #{x} Age: #{@hh[x]}"
-						end
-				end
+			def showPersone
 
-				def aa
-					# return @hh
-					@hh #можна без return
-				end
+					@hh.each do |k,v|
+						puts "Name: #{k} Age: #{v}"
+					end
+			end
 
+			# def lastPersone
 
-
-	end
+			# 	@lastPersone
+				
+			# end
+end
 
 b = Book.new
 
+b.addPersone :name=>'afasdf', :age=>44
+b.addPersone :name=>'ffffff', :age=>4
+b.addPersone :name=>'afggggggggf', :age=>24
 
+b.showPersone
 
-
-b.add_person :name => 'Ivan', :age => 33
-b.show_hash
-
-puts b.aa
-
-
-
-
-# 
-
-
-
-
-
-# loop do 
-# 	puts "Enter name: "
-# 	name = gets.strip
-
-# 	if name ==''
-# 		show_hash
-# 		break
-# 	end
-
-# 	puts "Enter age: "
-# 	age = gets.to_i
-
-
-	# add_person options
-
-# end
+puts b.lastPersone
