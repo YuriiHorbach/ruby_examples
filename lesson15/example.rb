@@ -1,13 +1,14 @@
 class Airport
 	attr_reader :name
+	attr_reader :planes
 
 	def initialize(name)
 		@name = name
-		@airplanes = []
+		@planes = []
 	end
 
 	def add_plane plane
-		@airplanes << plane	
+		@planes << plane	
 	end
 end
 
@@ -44,7 +45,6 @@ pl6 = Plane.new	'sam6'
 airport2.add_plane pl4
 airport2.add_plane pl5
 airport2.add_plane pl6
-
 
 
 
