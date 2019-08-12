@@ -50,7 +50,6 @@ x = 0
 album1.songs.each do |item|
 	puts " track #{x+1} - #{item.name}"
 	x += 1
-	
 end
 
 
