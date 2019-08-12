@@ -3,7 +3,7 @@ class Artist
 	attr_reader :name
 	attr_reader :albums
 	
-	def initialize
+	def initialize name
 			@name = name
 			@albums = []
 		
@@ -47,9 +47,10 @@ class Song
 	#name, duration
 end
 
-albums = []
+artists = []
 
 album1 = Album.new 'Alb1'
+album2 = Album.new 'Zibrembo'
 
 
 
@@ -61,15 +62,40 @@ album1.addSong song1
 album1.addSong song2
 album1.addSong song3
 
-puts "#{album1.albumName}: "
+album2.addSong song3
 
+# puts "#{album1.albumName}: "
 
-x = 0
+artist1 = Artist.new 'kaka'
+artist2 = Artist.new 'Zibrov'
 
-album1.songs.each do |item|
-	puts " track #{x+1} - #{item.name}"
-	x += 1
+artist1.add_albums album1
+artist2.add_albums album1
+artist2.add_albums album2
+
+artists << artist1
+artists << artist2
+
+artists.each do |art|
+
+	puts "#{art.name}: "
+	albNum = 0
+	art.albums.each do |album|
+		puts " #{albNum + 1} - #{album.albumName}"
+		albNum += 1
+		
+		x = 0
+
+		album.songs.each do |item|
+			puts "  track #{x+1} - #{item.name}"
+			x += 1
+		end
+
+	end
 end
+
+
+
 
 
 
