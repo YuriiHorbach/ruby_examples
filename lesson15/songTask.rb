@@ -1,3 +1,22 @@
+class Artist
+
+	attr_reader :name
+	attr_reader :albums
+	
+	def initialize
+			@name = name
+			@albums = []
+		
+	end
+
+	def add_albums album
+		@albums << album
+
+		
+	end
+
+end
+
 class Album
 	attr_reader :albumName
 	attr_reader :songs
