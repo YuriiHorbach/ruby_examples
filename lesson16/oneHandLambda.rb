@@ -8,33 +8,31 @@ hh = {111 => add_10,
 	444 => add_20, 
 	555 => add_20,
 	666 => sub_5,
-	777 => add_20,
-	888 => add_20,
-	999 => add_20
+	777 => sub_5,
+	888 => sub_5,
+	999 => sub_5
 
 }
 
-balance = 100
+balance = 1000
 
-
-while balance > 0 do
-	puts "Press Enter to play"
-	gets
+loop do
 
 	a = rand(100..999)
+	puts "Combination: #{a}"
 
 	if hh[a] 
-		balance += hh[a]
-	else
-		balance -= 5
-		if balance == 0
-			puts "You lose. You do not have money."
-			break
-		end
+		f = hh[a]
+		balance = f.call balance
+	else 
+		balance = sub_5.call balance
 	end 
+
 
 	puts "Current combination: #{a}"
 	puts "Your balance: #{balance}"
+	puts "Press Enter to continue"
+	gets
 
 	
 end
