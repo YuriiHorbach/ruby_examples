@@ -1,0 +1,1 @@
+puts Dir.entries 'C:/Projects/bak/'
