@@ -4,6 +4,18 @@ get '/' do
 	erb :index
 end
 
+# post '/' do
+# 	@login = params[:login]
+# 	@password = params[:password]
+
+# 	if @login == 'admin' && @password == '121212'
+# 			 # @admin_message = File.open 'user.txt', 'r'
+# 			 @message2 = 'sss'
+# 	end
+
+# 	erb :message
+# end
+
 post '/' do
 
 	@user_name = params[:user_name] #одержуємо те, що відправив браузер
@@ -19,4 +31,7 @@ post '/' do
 	erb :message #показуємо тепер на вигляді message
 
 end
+
+
+
 
