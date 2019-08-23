@@ -4,17 +4,6 @@ get '/' do
 	erb :index
 end
 
-# post '/' do
-# 	@login = params[:login]
-# 	@password = params[:password]
-
-# 	if @login == 'admin' && @password == '121212'
-# 			 # @admin_message = File.open 'user.txt', 'r'
-# 			 @message2 = 'sss'
-# 	end
-
-# 	erb :message
-# end
 
 post '/' do
 
@@ -31,6 +20,31 @@ post '/' do
 	erb :message #показуємо тепер на вигляді message
 
 end
+
+
+get '/admin' do
+
+	 @message1 = "textttttttttttt"
+
+	erb :admin
+end
+
+
+post '/admin' do
+	@login = params[:login]
+	@password = params[:password]
+
+	if @login == 'admin' && @password == '121212'
+			@message2 = File.open 'users.txt', 'r'
+			
+	else
+			@message3 = 'Wrong login or password'
+	end
+
+	erb :getData
+end
+
+
 
 
 
