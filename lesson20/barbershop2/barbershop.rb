@@ -14,7 +14,7 @@ post '/' do
 	@title = 'Thank you'
 	@message = "Dear #{@user_name}, we`ll be weiting for you at #{@date_time}"
 
-	f = File.open './public/users.txt', 'a'
+	f = File.open 'users.txt', 'a'
 	f.write "User: #{@user_name}, Phone: #{@phone}, Date and time: #{@date_time}"
 
 	erb :message #показуємо тепер на вигляді message
@@ -35,7 +35,7 @@ post '/admin' do
 	@password = params[:password]
 
 	if @login == 'admin' && @password == '121212'
-			@message2 = File.open './public/users.txt', 'r'
+			@message2 = File.open 'users.txt', 'r'
 			
 	else
 			@message3 = 'Wrong login or password'
